@@ -1,1 +1,63 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import '../templates/ciberpunk/token.css';
+
+/**
+ * Maps the template's plain custom properties onto Tailwind's namespaces.
+ *
+ * `inline` is required here: utilities must resolve to the value directly
+ * instead of re-referencing a theme variable, otherwise every class would be
+ * pinned to :root and ignore html[data-template='ciberpunk'].
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-muted: var(--surface-hover);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: var(--family-display);
+  --font-body: var(--family-body);
+  --font-mono: var(--family-mono);
+
+  --text-display-lg: var(--fs-display-lg);
+  --text-display-lg--line-height: var(--lh-display-lg);
+  --text-display-lg--letter-spacing: var(--ls-display-lg);
+  --text-headline-lg: var(--fs-headline-lg);
+  --text-headline-lg--line-height: var(--lh-headline-lg);
+  --text-headline-lg--letter-spacing: var(--ls-headline-lg);
+  --text-headline-md: var(--fs-headline-md);
+  --text-headline-md--line-height: var(--lh-headline-md);
+  --text-headline-sm: var(--fs-headline-sm);
+  --text-headline-sm--line-height: var(--lh-headline-sm);
+  --text-headline-sm--letter-spacing: var(--ls-headline-sm);
+  --text-label-lg: var(--fs-label-lg);
+  --text-label-lg--line-height: var(--lh-label-lg);
+  --text-label-lg--letter-spacing: var(--ls-label-lg);
+  --text-label-md: var(--fs-label-md);
+  --text-label-md--line-height: var(--lh-label-md);
+  --text-label-md--letter-spacing: var(--ls-label-md);
+  --text-label-sm: var(--fs-label-sm);
+  --text-label-sm--line-height: var(--lh-label-sm);
+  --text-label-sm--letter-spacing: var(--ls-label-sm);
+
+  --shadow-glow-primary: var(--glow-primary);
+  --shadow-glow-primary-subtle: var(--glow-primary-subtle);
+  --shadow-glow-primary-inner: var(--glow-primary-inner);
+  --shadow-glow-secondary: var(--glow-secondary);
+}

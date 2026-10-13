@@ -1,11 +1,11 @@
 ---
 import '../styles/global.css'
 
-const {title = "RootTree"} = Astro.props;
+const {title = "RootTree", template} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-template={template}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />

@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
+html[data-template='ciberpunk'] {
+  /* Surfaces ------------------------------------------------------------- */
+  --background: #0a0a12;
+  --surface: #131322;
+  --surface-hover: #1a1a2e;
+
+  /* Text ----------------------------------------------------------------- */
+  --foreground: #f0f4fc;
+  --muted-foreground: #797999;
+
+  /* Brand ---------------------------------------------------------------- */
+  --primary: #00f3ff;
+  --primary-foreground: #0a0a12;
+  --secondary: #ff007f;
+  --secondary-foreground: #0a0a12;
+  --accent: #39ff14;
+  --accent-foreground: #0a0a12;
+  --destructive: #ff007f;
+  --destructive-foreground: #0a0a12;
+
+  /* Lines ---------------------------------------------------------------- */
+  --border: #261d42;
+  --input: #261d42;
+  --ring: #00f3ff;
+
+  /* Card, split out so link cards restyle independently of generic surfaces */
+  --card: #131322;
+  --card-foreground: #f0f4fc;
+
+  /* Glows — the only source of depth in this system, no drop shadows */
+  --glow-primary: 0 0 16px rgb(0 243 255 / 0.28), 0 0 2px rgb(0 243 255 / 0.8);
+  --glow-primary-subtle: 0 0 12px rgb(0 243 255 / 0.35);
+  --glow-primary-inner: inset 0 0 12px rgb(0 243 255 / 0.08);
+  --glow-secondary: 0 0 18px rgb(255 0 127 / 0.35), 0 0 2px rgb(255 0 127 / 0.9);
+
+  /* Glass ---------------------------------------------------------------- */
+  --panel-blur: blur(12px);
+  --panel-opacity: 0.85;
+
+  /* Shape ---------------------------------------------------------------- */
+  --radius: 0; /* Strict zero-radius: no curved edges anywhere */
+
+  --family-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --family-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --fs-display-lg: 36px;
+  --lh-display-lg: 44px;
+  --ls-display-lg: -0.02em;
+
+  --fs-headline-lg: 28px;
+  --lh-headline-lg: 36px;
+  --ls-headline-lg: -0.01em;
+
+  --fs-headline-md: 22px;
+  --lh-headline-md: 28px;
+
+  --fs-headline-sm: 18px;
+  --lh-headline-sm: 24px;
+  --ls-headline-sm: 0.01em;
+
+  --fs-label-lg: 13px;
+  --lh-label-lg: 16px;
+  --ls-label-lg: 0.08em;
+
+  --fs-label-md: 11px;
+  --lh-label-md: 14px;
+  --ls-label-md: 0.1em;
+
+  --fs-label-sm: 10px;
+  --lh-label-sm: 12px;
+  --ls-label-sm: 0.12em;
+
+  --chamfer: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}

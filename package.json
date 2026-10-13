@@ -9,11 +9,22 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sync": "astro sync",
+    "check": "astro check",
+    "gen:schema": "astro sync && node scripts/publish-schema.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.8",
     "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@iconify-json/lucide": "^1.2.143",
+    "@iconify-json/simple-icons": "^1.2.100",
+    "@types/node": "^26.6.5",
+    "astro-icon": "^1.2.0",
+    "typescript": "^6.0.3"
   }
 }

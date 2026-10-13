@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+import Layout from '@/layouts/Layout.astro';
+
+export const getStaticPaths = (async () => {
+  const entries = await getCollection('profiles');
+
+  return entries.map((entry) => ({
+  
+    params: { profile: entry.id },
+    props: { profile: entry.data },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  profile: CollectionEntry<'profiles'>;
+}
+
+const { profile } = Astro.props;
+const currentProfile = profile.data
+---
+
+<Layout title={currentProfile.name} template={currentProfile.theme}>
+  <pre>{JSON.stringify(currentProfile, null, 2)}</pre>
+</Layout>

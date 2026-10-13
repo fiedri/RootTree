@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Display name shown under the avatar."
+    },
+    "bio": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "description": "Short one-liner, rendered centred under the name."
+    },
+    "avatar": {
+      "type": "string",
+      "pattern": "^(\\/|https?:\\/\\/).+\\.(jpe?g|png|webp|avif|gif)$",
+      "description": "Profile picture. Relative paths resolve from /public."
+    },
+    "avatarAlt": {
+      "description": "Alternative text for the profile picture, read by screen readers.",
+      "type": "string",
+      "maxLength": 120
+    },
+    "theme": {
+      "default": "ciberpunk",
+      "description": "Visual template for the profile.",
+      "type": "string",
+      "enum": [
+        "ciberpunk"
+      ]
+    },
+    "featured": {
+      "description": "Full-width card pinned above everything else. At most one per profile.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "Headline of the featured card."
+        },
+        "description": {
+          "description": "Supporting line giving context to the headline.",
+          "type": "string",
+          "maxLength": 140
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^(https?:\\/\\/|mailto:|tel:).+",
+          "description": "Where the card points to."
+        },
+        "image": {
+          "type": "string",
+          "pattern": "^(\\/|https?:\\/\\/).+\\.(jpe?g|png|webp|avif|gif)$",
+          "description": "Cover image for the featured card."
+        },
+        "cta": {
+          "default": "View more",
+          "description": "Label of the call-to-action button.",
+          "type": "string",
+          "maxLength": 24
+        }
+      },
+      "required": [
+        "title",
+        "url",
+        "image"
+      ],
+      "additionalProperties": false
+    },
+    "socials": {
+      "description": "Rendered as a horizontal row of icons below the profile.",
+      "maxItems": 15,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Iconify name in 'collection:name' form, rendered by astro-icon's <Icon>."
+              },
+              "foreground": {
+                "description": "Hex colour of the glyph. Omit to inherit the theme --foreground token.",
+                "type": "string",
+                "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+              },
+              "background": {
+                "description": "Hex colour painted behind the icon. Omit for a transparent backdrop.",
+                "type": "string",
+                "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "platform": {
+            "description": "Network metadata. Supplies the brand colour and the fallback accessible label.",
+            "type": "string",
+            "enum": [
+              "github",
+              "linkedin",
+              "x",
+              "twitter",
+              "instagram",
+              "tiktok",
+              "youtube",
+              "twitch",
+              "discord",
+              "telegram",
+              "spotify",
+              "soundcloud",
+              "reddit",
+              "facebook",
+              "threads",
+              "pinterest",
+              "behance",
+              "dribbble",
+              "medium",
+              "devto",
+              "patreon",
+              "kofi",
+              "bluesky",
+              "mastodon",
+              "codeberg",
+              "rss",
+              "email"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^(https?:\\/\\/|mailto:|tel:).+",
+            "description": "Full profile URL on that network. Email takes a mailto: address instead."
+          },
+          "label": {
+            "description": "Accessible name for the link. Falls back to platform, then to a humanised icon name.",
+            "type": "string",
+            "maxLength": 40
+          }
+        },
+        "required": [
+          "icon",
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "links": {
+      "minItems": 1,
+      "maxItems": 30,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "description": "Optional accessory icon rendered beside the title.",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Iconify name in 'collection:name' form, rendered by astro-icon's <Icon>."
+              },
+              "foreground": {
+                "description": "Hex colour of the glyph. Omit to inherit the theme --foreground token.",
+                "type": "string",
+                "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+              },
+              "background": {
+                "description": "Hex colour painted behind the icon. Omit for a transparent backdrop.",
+                "type": "string",
+                "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "description": "Card headline. This is the first thing a visitor reads."
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^(https?:\\/\\/|mailto:|tel:).+",
+            "description": "Card destination."
+          },
+          "description": {
+            "description": "Optional supporting line explaining what the visitor gets.",
+            "type": "string",
+            "maxLength": 140
+          },
+          "badge": {
+            "description": "Short label pinned to the card, e.g. 'NEW' or 'FREE'.",
+            "type": "string",
+            "maxLength": 16
+          },
+          "highlight": {
+            "default": false,
+            "description": "Renders the card in the theme accent colour to stand out.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "title",
+          "url"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Link cards rendered as a vertical column."
+    }
+  },
+  "required": [
+    "name",
+    "bio",
+    "avatar",
+    "links"
+  ],
+  "additionalProperties": false
+}

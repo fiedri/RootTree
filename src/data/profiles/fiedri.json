@@ -1,0 +1,52 @@
+{
+  "$schema": "../../../schemas/profiles.schema.json",
+  "name": "Fiedri Watanobe",
+  "bio": "Desarrollador frontend. Escribo sobre Astro, Svelte y todo lo que se pueda compilar a JavaScript.",
+  "avatar": "/avatars/fiedri.jpeg",
+  "avatarAlt": "Foto de perfil de Fiedri Watanobe",
+  "theme": "ciberpunk",
+  "featured": {
+    "title": "Curso de Astro: de cero a producción",
+    "description": "16 módulos, proyecto final incluido. Actualizado a Astro 7.",
+    "url": "https://astro.build/lessons",
+    "image": "/featured/astro-course.jpg",
+    "cta": "Empezar gratis"
+  },
+  "socials": [
+    { "icon": { "name": "simple-icons:github", "foreground": "#f0f4fc" }, "platform": "github", "url": "https://github.com/fiedri" },
+    { "icon": { "name": "simple-icons:linkedin", "foreground": "#0aa0ff" }, "platform": "linkedin", "url": "https://www.linkedin.com/in/fiedri" },
+    { "icon": { "name": "simple-icons:x" }, "platform": "x", "url": "https://x.com/fiedri" },
+    {
+      "icon": { "name": "lucide:mail", "foreground": "#39ff14", "background": "#131322" },
+      "platform": "email",
+      "label": "Email",
+      "url": "mailto:hola@fiedri.dev"
+    }
+  ],
+  "links": [
+    {
+      "icon": { "name": "lucide:globe", "foreground": "#00f3ff" },
+      "title": "Mi portfolio",
+      "description": "Proyectos reales con código y resultados.",
+      "url": "https://fiedri.dev",
+      "highlight": true
+    },
+    {
+      "title": "Newsletter semanal",
+      "description": "Un email cada viernes con lo mejor de la semana.",
+      "url": "https://fiedri.dev/newsletter",
+      "badge": "GRATIS"
+    },
+    {
+      "icon": { "name": "lucide:mail", "foreground": "#39ff14" },
+      "title": "Curso de Svelte 5",
+      "description": "Runes, snippets y el nuevo sistema de reactividad.",
+      "url": "https://svelte.dev/tutorial",
+      "badge": "NUEVO"
+    },
+    {
+      "title": "Hablemos",
+      "url": "mailto:hola@fiedri.dev"
+    }
+  ]
+}
