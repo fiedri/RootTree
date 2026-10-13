@@ -1,27 +1,27 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
+import type { Profile } from '@/schemas/profile';
 import Layout from '@/layouts/Layout.astro';
 
 export const getStaticPaths = (async () => {
   const entries = await getCollection('profiles');
 
   return entries.map((entry) => ({
-  
+    // The glob loader derives `id` from the filename, so fiedri.json -> /fiedri.
     params: { profile: entry.id },
     props: { profile: entry.data },
   }));
 }) satisfies GetStaticPaths;
 
 interface Props {
-  profile: CollectionEntry<'profiles'>;
+  profile: Profile;
 }
 
 const { profile } = Astro.props;
-const currentProfile = profile.data
 ---
 
-<Layout title={currentProfile.name} template={currentProfile.theme}>
-  <pre>{JSON.stringify(currentProfile, null, 2)}</pre>
+<Layout title={profile.name} template={profile.theme}>
+  <pre>{JSON.stringify(profile, null, 2)}</pre>
 </Layout>

@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "roottree",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -26,5 +26,6 @@
     "@types/node": "^26.6.5",
     "astro-icon": "^1.2.0",
     "typescript": "^6.0.3"
-  }
+  },
+  "description": "A free, self-hosted, open-source link-in-bio. Your profile is one JSON file."
 }
